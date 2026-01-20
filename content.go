@@ -218,6 +218,7 @@ type FilePart struct {
 	Filename        string          `json:"filename"`
 	Data            []byte          `json:"data"`
 	MediaType       string          `json:"media_type"`
+	URI             string          `json:"uri,omitempty"`
 	ProviderOptions ProviderOptions `json:"provider_options"`
 }
 

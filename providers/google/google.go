@@ -371,12 +371,21 @@ func toGooglePrompt(prompt fantasy.Prompt) (*genai.Content, []*genai.Content, []
 					if !ok {
 						continue
 					}
-					parts = append(parts, &genai.Part{
-						InlineData: &genai.Blob{
-							Data:     file.Data,
-							MIMEType: file.MediaType,
-						},
-					})
+					if file.URI != "" {
+						parts = append(parts, &genai.Part{
+							FileData: &genai.FileData{
+								FileURI:  file.URI,
+								MIMEType: file.MediaType,
+							},
+						})
+					} else if len(file.Data) > 0 {
+						parts = append(parts, &genai.Part{
+							InlineData: &genai.Blob{
+								Data:     file.Data,
+								MIMEType: file.MediaType,
+							},
+						})
+					}
 				}
 			}
 			if len(parts) > 0 {
