@@ -9,9 +9,9 @@ import (
 	"fmt"
 	"os"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/object"
-	"charm.land/fantasy/providers/openai"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/object"
+	"github.com/LeDuyViet/fantasy/providers/openai"
 )
 
 // Here's what we want the LLM to fill out. The struct tags tell the model
@@ -97,3 +97,4 @@ func main() {
 
 	fmt.Println()
 }
+

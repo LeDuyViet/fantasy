@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/openai"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/openai"
 	"charm.land/x/vcr"
 )
 
@@ -45,3 +45,4 @@ func openAIBuilder(model string) builderFunc {
 		return provider.LanguageModel(t.Context(), model)
 	}
 }
+

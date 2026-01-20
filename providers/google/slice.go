@@ -9,3 +9,4 @@ func depointerSlice[T any](s []*T) []T {
 	}
 	return result
 }
+

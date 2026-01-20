@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"charm.land/fantasy/schema"
+	"github.com/LeDuyViet/fantasy/schema"
 )
 
 // Schema represents a JSON schema for tool input validation.
@@ -173,3 +173,4 @@ func (w *funcToolWrapper[TInput]) Run(ctx context.Context, params ToolCall) (Too
 
 	return w.fn(ctx, input, params)
 }
+

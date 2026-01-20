@@ -9,9 +9,9 @@ import (
 	"reflect"
 	"strings"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/object"
-	"charm.land/fantasy/schema"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/object"
+	"github.com/LeDuyViet/fantasy/schema"
 	xjson "github.com/charmbracelet/x/json"
 	"github.com/google/uuid"
 	"github.com/openai/openai-go/v2"
@@ -946,3 +946,4 @@ func addAdditionalPropertiesFalse(schema map[string]any) {
 		addAdditionalPropertiesFalse(items)
 	}
 }
+

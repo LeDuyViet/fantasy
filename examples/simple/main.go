@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"os"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/openrouter"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/openrouter"
 )
 
 func main() {
@@ -61,3 +61,4 @@ func main() {
 	}
 	fmt.Println(result.Response.Content.Text())
 }
+

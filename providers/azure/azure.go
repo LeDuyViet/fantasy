@@ -6,8 +6,8 @@ import (
 	"regexp"
 	"strings"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/openai"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/openai"
 	"github.com/openai/openai-go/v2/azure"
 	"github.com/openai/openai-go/v2/option"
 )
@@ -115,3 +115,4 @@ func WithUseResponsesAPI() Option {
 		o.openaiOptions = append(o.openaiOptions, openai.WithUseResponsesAPI())
 	}
 }
+

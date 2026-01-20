@@ -109,3 +109,4 @@ func TestNewMediaResponse(t *testing.T) {
 	require.False(t, resp.IsError)
 	require.Empty(t, resp.Content)
 }
+

@@ -18,3 +18,4 @@ func ParseOptions[T any](options map[string]any, m *T) error {
 	}
 	return decoder.Decode(options)
 }
+

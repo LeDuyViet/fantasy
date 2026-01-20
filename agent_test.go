@@ -1768,3 +1768,4 @@ func TestAgent_MediaToolResponses(t *testing.T) {
 		require.Equal(t, 600, metadata.Height)
 	})
 }
+

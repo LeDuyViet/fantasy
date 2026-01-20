@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"charm.land/fantasy"
+	"github.com/LeDuyViet/fantasy"
 	"github.com/stretchr/testify/require"
 )
 
@@ -432,3 +432,4 @@ func TestToPromptFunc_DropsEmptyMessages(t *testing.T) {
 		require.Empty(t, warnings)
 	})
 }
+

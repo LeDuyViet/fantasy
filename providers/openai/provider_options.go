@@ -4,7 +4,7 @@ package openai
 import (
 	"encoding/json"
 
-	"charm.land/fantasy"
+	"github.com/LeDuyViet/fantasy"
 	"github.com/openai/openai-go/v2"
 )
 
@@ -172,3 +172,4 @@ func ParseOptions(data map[string]any) (*ProviderOptions, error) {
 	}
 	return &options, nil
 }
+

@@ -7,10 +7,10 @@ import (
 	"maps"
 	"strings"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/anthropic"
-	"charm.land/fantasy/providers/google"
-	"charm.land/fantasy/providers/openai"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/anthropic"
+	"github.com/LeDuyViet/fantasy/providers/google"
+	"github.com/LeDuyViet/fantasy/providers/openai"
 	openaisdk "github.com/openai/openai-go/v2"
 	"github.com/openai/openai-go/v2/packages/param"
 )
@@ -1034,3 +1034,4 @@ func languageModelToPrompt(prompt fantasy.Prompt, _, model string) ([]openaisdk.
 	}
 	return messages, warnings
 }
+

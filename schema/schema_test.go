@@ -532,3 +532,4 @@ func TestSchemaToParametersEdgeCases(t *testing.T) {
 		})
 	}
 }
+

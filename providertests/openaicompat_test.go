@@ -5,9 +5,9 @@ import (
 	"os"
 	"testing"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/openai"
-	"charm.land/fantasy/providers/openaicompat"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/openai"
+	"github.com/LeDuyViet/fantasy/providers/openaicompat"
 	"charm.land/x/vcr"
 	"github.com/stretchr/testify/require"
 )
@@ -140,3 +140,4 @@ func builderLlamaCppGptOss(t *testing.T, r *vcr.Recorder) (fantasy.LanguageModel
 	}
 	return provider.LanguageModel(t.Context(), "openai/gpt-oss-20b")
 }
+

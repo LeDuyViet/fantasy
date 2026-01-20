@@ -3,7 +3,7 @@
 <p>
   <img width="475" alt="The Charm Fantasy logo" src="https://github.com/user-attachments/assets/b22c5862-792a-44c1-bc98-55a2e46c8fb9" /><br>
   <a href="https://github.com/charmbracelet/fantasy/releases"><img src="https://img.shields.io/github/release/charmbracelet/fantasy.svg" alt="Latest Release"></a>
-  <a href="https://pkg.go.dev/charm.land/fantasy?tab=doc"><img src="https://godoc.org/charm.land/fantasy?status.svg" alt="GoDoc"></a>
+  <a href="https://pkg.go.dev/github.com/LeDuyViet/fantasy?tab=doc"><img src="https://godoc.org/github.com/LeDuyViet/fantasy?status.svg" alt="GoDoc"></a>
   <a href="https://github.com/charmbracelet/fantasy/actions"><img src="https://github.com/charmbracelet/fantasy/actions/workflows/build.yml/badge.svg?branch=main" alt="Build Status"></a>
 </p>
 
@@ -17,8 +17,8 @@ Build AI agents with Go. Multi-provider, multi-model, one API.
 > Fantasy is currently a preview. Expect API changes.
 
 ```go
-import "charm.land/fantasy"
-import "charm.land/fantasy/providers/openrouter"
+import "github.com/LeDuyViet/fantasy"
+import "github.com/LeDuyViet/fantasy/providers/openrouter"
 
 // Choose your fave provider.
 provider, err := openrouter.New(openrouter.WithAPIKey(myHotKey))
@@ -96,3 +96,4 @@ Part of [Charm](https://charm.land).
 <a href="https://charm.land/"><img alt="The Charm logo" src="https://stuff.charm.sh/charm-banner-next.jpg" width="400"></a>
 
 Charm热爱开源 • Charm loves open source
+

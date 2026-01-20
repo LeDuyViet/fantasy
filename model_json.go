@@ -154,3 +154,4 @@ func (s *StreamPart) UnmarshalJSON(data []byte) error {
 
 	return nil
 }
+

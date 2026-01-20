@@ -6,10 +6,10 @@ import (
 	"os"
 	"testing"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/anthropic"
-	"charm.land/fantasy/providers/google"
-	"charm.land/fantasy/providers/openai"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/anthropic"
+	"github.com/LeDuyViet/fantasy/providers/google"
+	"github.com/LeDuyViet/fantasy/providers/openai"
 	"charm.land/x/vcr"
 	"github.com/stretchr/testify/require"
 )
@@ -144,3 +144,4 @@ func TestImageUploadAgentStreaming(t *testing.T) {
 		})
 	}
 }
+

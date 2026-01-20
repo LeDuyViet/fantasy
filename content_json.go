@@ -1036,3 +1036,4 @@ func UnmarshalToolResultOutputContent(data []byte) (ToolResultOutputContent, err
 		return nil, fmt.Errorf("unknown tool result output content type: %s", troj.Type)
 	}
 }
+

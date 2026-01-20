@@ -2,9 +2,9 @@ module structured-outputs
 
 go 1.25.2
 
-replace charm.land/fantasy => ../..
+replace github.com/LeDuyViet/fantasy => ../..
 
-require charm.land/fantasy v0.0.0-00010101000000-000000000000
+require github.com/LeDuyViet/fantasy v0.0.0-00010101000000-000000000000
 
 require (
 	github.com/RealAlexandreAI/json-repair v0.0.14 // indirect
@@ -24,3 +24,4 @@ require (
 	github.com/tidwall/sjson v1.2.5 // indirect
 	golang.org/x/text v0.29.0 // indirect
 )
+

@@ -4,7 +4,7 @@ package anthropic
 import (
 	"encoding/json"
 
-	"charm.land/fantasy"
+	"github.com/LeDuyViet/fantasy"
 )
 
 // Global type identifiers for Anthropic-specific provider data.
@@ -149,3 +149,4 @@ func ParseOptions(data map[string]any) (*ProviderOptions, error) {
 	}
 	return &options, nil
 }
+

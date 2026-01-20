@@ -104,3 +104,4 @@ func MarshalProviderType[T any](typeID string, data T) ([]byte, error) {
 func UnmarshalProviderType[T any](data []byte, target *T) error {
 	return json.Unmarshal(data, target)
 }
+

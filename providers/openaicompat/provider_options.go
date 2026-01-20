@@ -4,8 +4,8 @@ package openaicompat
 import (
 	"encoding/json"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/openai"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/openai"
 )
 
 // Global type identifiers for OpenAI-compatible provider data.
@@ -70,3 +70,4 @@ func ParseOptions(data map[string]any) (*ProviderOptions, error) {
 	}
 	return &options, nil
 }
+

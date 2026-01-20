@@ -27,3 +27,4 @@ func bedrockPrefixModelWithRegion(modelID string) string {
 	}
 	return prefix + modelID
 }
+

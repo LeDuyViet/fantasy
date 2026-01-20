@@ -7,7 +7,7 @@ import (
 	"iter"
 	"reflect"
 
-	"charm.land/fantasy/schema"
+	"github.com/LeDuyViet/fantasy/schema"
 )
 
 // ObjectMode specifies how structured output should be generated.
@@ -231,3 +231,4 @@ func unmarshalObject(obj any, target any) error {
 
 	return nil
 }
+

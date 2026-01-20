@@ -562,3 +562,4 @@ func NewSystemMessage(prompt ...string) Message {
 		Content: content,
 	}
 }
+

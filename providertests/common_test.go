@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"charm.land/fantasy"
+	"github.com/LeDuyViet/fantasy"
 	"charm.land/x/vcr"
 	"github.com/joho/godotenv"
 	"github.com/stretchr/testify/require"
@@ -359,3 +359,4 @@ func containsAny(s string, subs ...string) bool {
 	}
 	return false
 }
+

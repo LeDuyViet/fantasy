@@ -10,8 +10,8 @@ import (
 	"os"
 	"strings"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/openai"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/openai"
 )
 
 const systemPrompt = `
@@ -140,3 +140,4 @@ func randomBarks(low, high int) string {
 	}
 	return barks.String()
 }
+

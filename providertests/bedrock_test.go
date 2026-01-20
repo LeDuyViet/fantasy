@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/bedrock"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/bedrock"
 	"charm.land/x/vcr"
 )
 
@@ -66,3 +66,4 @@ func buildersBedrockBasicAuth(t *testing.T, r *vcr.Recorder) (fantasy.LanguageMo
 	}
 	return provider.LanguageModel(t.Context(), "anthropic.claude-3-sonnet-20240229-v1:0")
 }
+

@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"charm.land/fantasy"
+	"github.com/LeDuyViet/fantasy"
 	"github.com/openai/openai-go/v2/packages/param"
 	"github.com/stretchr/testify/require"
 )
@@ -3247,3 +3247,4 @@ func TestResponsesToPrompt_DropsEmptyMessages(t *testing.T) {
 		require.Empty(t, warnings)
 	})
 }
+

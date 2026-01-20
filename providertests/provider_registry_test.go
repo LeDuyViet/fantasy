@@ -4,12 +4,12 @@ import (
 	"encoding/json"
 	"testing"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/anthropic"
-	"charm.land/fantasy/providers/google"
-	"charm.land/fantasy/providers/openai"
-	"charm.land/fantasy/providers/openaicompat"
-	"charm.land/fantasy/providers/openrouter"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/anthropic"
+	"github.com/LeDuyViet/fantasy/providers/google"
+	"github.com/LeDuyViet/fantasy/providers/openai"
+	"github.com/LeDuyViet/fantasy/providers/openaicompat"
+	"github.com/LeDuyViet/fantasy/providers/openrouter"
 	"github.com/stretchr/testify/require"
 )
 
@@ -419,3 +419,4 @@ func TestProviderRegistry_AllTypesRegistered(t *testing.T) {
 		})
 	}
 }
+

@@ -6,8 +6,8 @@ import (
 	"os"
 	"testing"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/anthropic"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/anthropic"
 	"charm.land/x/vcr"
 	"github.com/stretchr/testify/require"
 )
@@ -155,3 +155,4 @@ func anthropicBuilder(model string) builderFunc {
 		return provider.LanguageModel(t.Context(), model)
 	}
 }
+

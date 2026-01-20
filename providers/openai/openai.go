@@ -6,7 +6,7 @@ import (
 	"context"
 	"maps"
 
-	"charm.land/fantasy"
+	"github.com/LeDuyViet/fantasy"
 	"github.com/openai/openai-go/v2"
 	"github.com/openai/openai-go/v2/option"
 )
@@ -189,3 +189,4 @@ func (o *provider) LanguageModel(_ context.Context, modelID string) (fantasy.Lan
 func (o *provider) Name() string {
 	return Name
 }
+

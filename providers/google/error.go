@@ -4,7 +4,7 @@ import (
 	"cmp"
 	"errors"
 
-	"charm.land/fantasy"
+	"github.com/LeDuyViet/fantasy"
 	"google.golang.org/genai"
 )
 
@@ -21,3 +21,4 @@ func toProviderErr(err error) error {
 		ResponseBody: []byte(apiErr.Message),
 	}
 }
+

@@ -96,3 +96,4 @@ func TestParseAzureURL(t *testing.T) {
 		})
 	}
 }
+

@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"strings"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/openai"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/openai"
 	openaisdk "github.com/openai/openai-go/v2"
 	"github.com/openai/openai-go/v2/packages/param"
 	"github.com/openai/openai-go/v2/shared"
@@ -442,3 +442,4 @@ func hasVisibleCompatAssistantContent(msg *openaisdk.ChatCompletionAssistantMess
 	}
 	return false
 }
+

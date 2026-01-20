@@ -595,3 +595,4 @@ func TestStreamingAgentSources(t *testing.T) {
 	resultSources := result.Response.Content.Sources()
 	require.Equal(t, 2, len(resultSources))
 }
+

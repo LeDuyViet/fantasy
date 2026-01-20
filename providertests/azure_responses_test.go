@@ -6,9 +6,9 @@ import (
 	"os"
 	"testing"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/azure"
-	"charm.land/fantasy/providers/openai"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/azure"
+	"github.com/LeDuyViet/fantasy/providers/openai"
 	"charm.land/x/vcr"
 	"github.com/stretchr/testify/require"
 )
@@ -96,3 +96,4 @@ func testAzureResponsesThinkingWithSummaryThinking(t *testing.T, result *fantasy
 	require.Greater(t, encryptedData, 0)
 	require.Equal(t, reasoningContentCount, encryptedData)
 }
+

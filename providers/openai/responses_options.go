@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"slices"
 
-	"charm.land/fantasy"
+	"github.com/LeDuyViet/fantasy"
 )
 
 // Global type identifiers for OpenAI Responses API-specific data.
@@ -218,3 +218,4 @@ func IsResponsesModel(modelID string) bool {
 func IsResponsesReasoningModel(modelID string) bool {
 	return slices.Contains(responsesReasoningModelIDs, modelID)
 }
+

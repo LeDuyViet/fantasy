@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"reflect"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/schema"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/schema"
 )
 
 // Generate generates a structured object that matches the given type T.
@@ -614,3 +614,4 @@ func unmarshal(obj any, target any) error {
 
 	return nil
 }
+

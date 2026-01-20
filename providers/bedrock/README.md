@@ -8,3 +8,4 @@ To see available models, run:
 ```bash
 aws bedrock list-inference-profiles --region us-east-1
 ```
+

@@ -12,8 +12,8 @@ import (
 	"maps"
 	"strings"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/object"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/object"
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/charmbracelet/anthropic-sdk-go"
 	"github.com/charmbracelet/anthropic-sdk-go/bedrock"
@@ -1031,3 +1031,4 @@ func (a languageModel) StreamObject(ctx context.Context, call fantasy.ObjectCall
 		return object.StreamWithTool(ctx, a, call)
 	}
 }
+

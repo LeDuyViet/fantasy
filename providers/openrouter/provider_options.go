@@ -4,7 +4,7 @@ package openrouter
 import (
 	"encoding/json"
 
-	"charm.land/fantasy"
+	"github.com/LeDuyViet/fantasy"
 )
 
 // ReasoningEffort represents the reasoning effort level for OpenRouter models.
@@ -208,3 +208,4 @@ func ParseOptions(data map[string]any) (*ProviderOptions, error) {
 	}
 	return &options, nil
 }
+

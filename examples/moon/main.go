@@ -12,8 +12,8 @@ import (
 	"os"
 	"time"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/anthropic"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/anthropic"
 	"github.com/charmbracelet/lipgloss/v2"
 	"github.com/charmbracelet/lipgloss/v2/table"
 	"github.com/charmbracelet/log/v2"
@@ -156,3 +156,4 @@ func init() {
 	}
 	formatText = lipgloss.NewStyle().Padding(0, 3, 1, 3).Width(w).Render
 }
+

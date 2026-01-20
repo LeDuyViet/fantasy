@@ -7,8 +7,8 @@ import (
 	"os"
 	"testing"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/google"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/google"
 	"charm.land/x/vcr"
 	"github.com/stretchr/testify/require"
 )
@@ -123,3 +123,4 @@ func vertexBuilder(model string) builderFunc {
 		return provider.LanguageModel(t.Context(), model)
 	}
 }
+

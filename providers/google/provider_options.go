@@ -4,7 +4,7 @@ package google
 import (
 	"encoding/json"
 
-	"charm.land/fantasy"
+	"github.com/LeDuyViet/fantasy"
 )
 
 // Global type identifiers for Google-specific provider data.
@@ -130,3 +130,4 @@ func ParseOptions(data map[string]any) (*ProviderOptions, error) {
 	}
 	return &options, nil
 }
+

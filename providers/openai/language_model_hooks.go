@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"charm.land/fantasy"
+	"github.com/LeDuyViet/fantasy"
 	"github.com/openai/openai-go/v2"
 	"github.com/openai/openai-go/v2/packages/param"
 	"github.com/openai/openai-go/v2/shared"
@@ -576,3 +576,4 @@ func hasVisibleAssistantContent(msg *openai.ChatCompletionAssistantMessageParam)
 	}
 	return false
 }
+

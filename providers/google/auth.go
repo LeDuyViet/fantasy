@@ -13,3 +13,4 @@ type dummyTokenProvider struct{}
 func (dummyTokenProvider) Token(_ context.Context) (*auth.Token, error) {
 	return &auth.Token{Value: "dummy-token"}, nil
 }
+

@@ -4,3 +4,4 @@
 * Access https://ai.azure.com/
 * Create a project / resource (or use an existing one)
 * Copy and API key
+

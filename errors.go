@@ -102,3 +102,4 @@ func IsNoObjectGeneratedError(err error) bool {
 	var target *NoObjectGeneratedError
 	return errors.As(err, &target)
 }
+

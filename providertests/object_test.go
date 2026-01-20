@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"charm.land/fantasy"
+	"github.com/LeDuyViet/fantasy"
 	"charm.land/x/vcr"
 	"github.com/stretchr/testify/require"
 )
@@ -420,3 +420,4 @@ func testObjectWithRepair(t *testing.T, pairs []builderPair) {
 		})
 	}
 }
+

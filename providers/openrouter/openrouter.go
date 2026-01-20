@@ -4,8 +4,8 @@ package openrouter
 import (
 	"encoding/json"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/openai"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/openai"
 	"github.com/openai/openai-go/v2/option"
 )
 
@@ -111,3 +111,4 @@ func structToMapJSON(s any) (map[string]any, error) {
 	}
 	return result, nil
 }
+

@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strings"
 
-	"charm.land/fantasy"
+	"github.com/LeDuyViet/fantasy"
 	"github.com/openai/openai-go/v2"
 )
 
@@ -50,3 +50,4 @@ func toHeaderMap(in http.Header) (out map[string]string) {
 	}
 	return out
 }
+

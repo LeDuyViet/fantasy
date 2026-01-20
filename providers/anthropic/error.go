@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strings"
 
-	"charm.land/fantasy"
+	"github.com/LeDuyViet/fantasy"
 	"github.com/charmbracelet/anthropic-sdk-go"
 )
 
@@ -37,3 +37,4 @@ func toHeaderMap(in http.Header) (out map[string]string) {
 	}
 	return out
 }
+

@@ -11,10 +11,10 @@ import (
 	"reflect"
 	"strings"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/object"
-	"charm.land/fantasy/providers/anthropic"
-	"charm.land/fantasy/schema"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/object"
+	"github.com/LeDuyViet/fantasy/providers/anthropic"
+	"github.com/LeDuyViet/fantasy/schema"
 	"cloud.google.com/go/auth"
 	"github.com/charmbracelet/x/exp/slice"
 	"github.com/google/uuid"
@@ -1438,3 +1438,4 @@ func mapUsage(usage *genai.GenerateContentResponseUsageMetadata) fantasy.Usage {
 		CacheReadTokens:     int64(usage.CachedContentTokenCount),
 	}
 }
+

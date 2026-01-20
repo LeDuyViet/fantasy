@@ -6,9 +6,9 @@ import (
 	"os"
 	"testing"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/azure"
-	"charm.land/fantasy/providers/openai"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/azure"
+	"github.com/LeDuyViet/fantasy/providers/openai"
 	"charm.land/x/vcr"
 	"github.com/stretchr/testify/require"
 )
@@ -74,3 +74,4 @@ func builderAzureGrok3Mini(t *testing.T, r *vcr.Recorder) (fantasy.LanguageModel
 	}
 	return provider.LanguageModel(t.Context(), "grok-3-mini")
 }
+

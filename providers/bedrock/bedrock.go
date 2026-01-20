@@ -2,8 +2,8 @@
 package bedrock
 
 import (
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/anthropic"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/anthropic"
 	"github.com/charmbracelet/anthropic-sdk-go/option"
 )
 
@@ -63,3 +63,4 @@ func WithSkipAuth(skipAuth bool) Option {
 		o.skipAuth = skipAuth
 	}
 }
+

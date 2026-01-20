@@ -5,9 +5,9 @@ import (
 	"os"
 	"testing"
 
-	"charm.land/fantasy"
-	"charm.land/fantasy/providers/anthropic"
-	"charm.land/fantasy/providers/openrouter"
+	"github.com/LeDuyViet/fantasy"
+	"github.com/LeDuyViet/fantasy/providers/anthropic"
+	"github.com/LeDuyViet/fantasy/providers/openrouter"
 	"charm.land/x/vcr"
 	"github.com/stretchr/testify/require"
 )
@@ -127,3 +127,4 @@ func openrouterBuilder(model string) builderFunc {
 		return provider.LanguageModel(t.Context(), model)
 	}
 }
+
