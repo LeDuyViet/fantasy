@@ -28,6 +28,21 @@ func (m *mockTool) ProviderOptions() ProviderOptions {
 	return m.providerOptions
 }
 
+// ToTool converts the mockTool to a Tool
+func (m *mockTool) ToTool() Tool {
+	info := m.Info()
+	return FunctionTool{
+		Name:        info.Name,
+		Description: info.Description,
+		InputSchema: map[string]any{
+			"type":       "object",
+			"properties": info.Parameters,
+			"required":   info.Required,
+		},
+		ProviderOptions: m.providerOptions,
+	}
+}
+
 func (m *mockTool) Info() ToolInfo {
 	return ToolInfo{
 		Name:        m.name,

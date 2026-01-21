@@ -94,6 +94,7 @@ type AgentTool interface {
 	Run(ctx context.Context, params ToolCall) (ToolResponse, error)
 	ProviderOptions() ProviderOptions
 	SetProviderOptions(opts ProviderOptions)
+	ToTool() Tool
 }
 
 // NewAgentTool creates a typed tool from a function with automatic schema generation.
@@ -165,6 +166,20 @@ func (w *funcToolWrapper[TInput]) Info() ToolInfo {
 	}
 }
 
+func (w *funcToolWrapper[TInput]) ToTool() Tool {
+	info := w.Info()
+	return FunctionTool{
+		Name:        info.Name,
+		Description: info.Description,
+		InputSchema: map[string]any{
+			"type":       "object",
+			"properties": info.Parameters,
+			"required":   info.Required,
+		},
+		ProviderOptions: w.providerOptions,
+	}
+}
+
 func (w *funcToolWrapper[TInput]) Run(ctx context.Context, params ToolCall) (ToolResponse, error) {
 	var input TInput
 	if err := json.Unmarshal([]byte(params.Input), &input); err != nil {
@@ -172,5 +187,42 @@ func (w *funcToolWrapper[TInput]) Run(ctx context.Context, params ToolCall) (Too
 	}
 
 	return w.fn(ctx, input, params)
+}
+
+// FileSearchAgentTool implements AgentTool for file search.
+type FileSearchAgentTool struct {
+	name            string
+	providerOptions ProviderOptions
+}
+
+// NewFileSearchTool creates a new file search tool.
+func NewFileSearchTool(name string) AgentTool {
+	return &FileSearchAgentTool{
+		name: name,
+	}
+}
+
+func (t *FileSearchAgentTool) Info() ToolInfo {
+	return ToolInfo{
+		Name: t.name,
+	}
+}
+
+func (t *FileSearchAgentTool) Run(ctx context.Context, params ToolCall) (ToolResponse, error) {
+	return ToolResponse{}, fmt.Errorf("file search tool is executed by the provider")
+}
+
+func (t *FileSearchAgentTool) ProviderOptions() ProviderOptions {
+	return t.providerOptions
+}
+
+func (t *FileSearchAgentTool) SetProviderOptions(opts ProviderOptions) {
+	t.providerOptions = opts
+}
+
+func (t *FileSearchAgentTool) ToTool() Tool {
+	return FileSearchTool{
+		Name: t.name,
+	}
 }
 

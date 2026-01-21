@@ -475,6 +475,8 @@ const (
 	ToolTypeFunction ToolType = "function"
 	// ToolTypeProviderDefined represents a provider-defined tool.
 	ToolTypeProviderDefined ToolType = "provider-defined"
+	// ToolTypeFileSearch represents a file search tool.
+	ToolTypeFileSearch ToolType = "file-search"
 )
 
 // Tool represents a tool that can be used by the model.
@@ -532,6 +534,22 @@ func (p ProviderDefinedTool) GetName() string {
 	return p.Name
 }
 
+// FileSearchTool represents a file search tool.
+type FileSearchTool struct {
+	// Name of the tool. Unique within this model call.
+	Name string `json:"name"`
+}
+
+// GetType returns the type of the file search tool.
+func (f FileSearchTool) GetType() ToolType {
+	return ToolTypeFileSearch
+}
+
+// GetName returns the name of the file search tool.
+func (f FileSearchTool) GetName() string {
+	return f.Name
+}
+
 // NewUserMessage creates a new user message with the given prompt and optional files.
 func NewUserMessage(prompt string, files ...FilePart) Message {
 	content := []MessagePart{
@@ -562,4 +580,3 @@ func NewSystemMessage(prompt ...string) Message {
 		Content: content,
 	}
 }
-

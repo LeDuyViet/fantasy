@@ -911,17 +911,8 @@ func (a *agent) prepareTools(tools []AgentTool, activeTools []string, disableAll
 		if len(activeTools) > 0 && !slices.Contains(activeTools, tool.Info().Name) {
 			continue
 		}
-		info := tool.Info()
-		preparedTools = append(preparedTools, FunctionTool{
-			Name:        info.Name,
-			Description: info.Description,
-			InputSchema: map[string]any{
-				"type":       "object",
-				"properties": info.Parameters,
-				"required":   info.Required,
-			},
-			ProviderOptions: tool.ProviderOptions(),
-		})
+
+		preparedTools = append(preparedTools, tool.ToTool())
 	}
 	return preparedTools
 }

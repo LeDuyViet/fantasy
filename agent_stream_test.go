@@ -22,6 +22,21 @@ func (e *EchoTool) ProviderOptions() ProviderOptions {
 	return e.providerOptions
 }
 
+// ToTool converts the EchoTool to a Tool
+func (e *EchoTool) ToTool() Tool {
+	info := e.Info()
+	return FunctionTool{
+		Name:        info.Name,
+		Description: info.Description,
+		InputSchema: map[string]any{
+			"type":       "object",
+			"properties": info.Parameters,
+			"required":   info.Required,
+		},
+		ProviderOptions: e.providerOptions,
+	}
+}
+
 // Info returns the tool information
 func (e *EchoTool) Info() ToolInfo {
 	return ToolInfo{

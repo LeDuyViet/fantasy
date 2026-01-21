@@ -312,9 +312,7 @@ func (g languageModel) prepareParams(call fantasy.Call) (*genai.GenerateContentC
 	if len(call.Tools) > 0 {
 		tools, toolChoice, toolWarnings := toGoogleTools(call.Tools, call.ToolChoice)
 		config.ToolConfig = toolChoice
-		config.Tools = append(config.Tools, &genai.Tool{
-			FunctionDeclarations: tools,
-		})
+		config.Tools = append(config.Tools, tools...)
 		warnings = append(warnings, toolWarnings...)
 	}
 
@@ -1128,9 +1126,11 @@ func (g *languageModel) streamObjectWithJSONMode(ctx context.Context, call fanta
 	}, nil
 }
 
-func toGoogleTools(tools []fantasy.Tool, toolChoice *fantasy.ToolChoice) (googleTools []*genai.FunctionDeclaration, googleToolChoice *genai.ToolConfig, warnings []fantasy.CallWarning) {
+func toGoogleTools(tools []fantasy.Tool, toolChoice *fantasy.ToolChoice) (googleTools []*genai.Tool, googleToolChoice *genai.ToolConfig, warnings []fantasy.CallWarning) {
+	var functionDeclarations []*genai.FunctionDeclaration
 	for _, tool := range tools {
-		if tool.GetType() == fantasy.ToolTypeFunction {
+		switch tool.GetType() {
+		case fantasy.ToolTypeFunction:
 			ft, ok := tool.(fantasy.FunctionTool)
 			if !ok {
 				continue
@@ -1155,16 +1155,35 @@ func toGoogleTools(tools []fantasy.Tool, toolChoice *fantasy.ToolChoice) (google
 					Required:   required,
 				},
 			}
-			googleTools = append(googleTools, declaration)
-			continue
+			functionDeclarations = append(functionDeclarations, declaration)
+
+		case fantasy.ToolTypeFileSearch:
+			fs, ok := tool.(fantasy.FileSearchTool)
+			if !ok {
+				continue
+			}
+			googleTools = append(googleTools, &genai.Tool{
+				FileSearch: &genai.FileSearch{
+					FileSearchStoreNames: []string{fs.Name},
+				},
+			})
+
+		default:
+			// TODO: handle provider tool calls
+			warnings = append(warnings, fantasy.CallWarning{
+				Type:    fantasy.CallWarningTypeUnsupportedTool,
+				Tool:    tool,
+				Message: "tool is not supported",
+			})
 		}
-		// TODO: handle provider tool calls
-		warnings = append(warnings, fantasy.CallWarning{
-			Type:    fantasy.CallWarningTypeUnsupportedTool,
-			Tool:    tool,
-			Message: "tool is not supported",
+	}
+
+	if len(functionDeclarations) > 0 {
+		googleTools = append(googleTools, &genai.Tool{
+			FunctionDeclarations: functionDeclarations,
 		})
 	}
+
 	if toolChoice == nil {
 		return googleTools, googleToolChoice, warnings
 	}
