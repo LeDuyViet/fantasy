@@ -3,6 +3,7 @@ package google
 import (
 	"context"
 	"fmt"
+	"mime"
 	"os"
 	"path/filepath"
 	"time"
@@ -37,8 +38,24 @@ func (u *FileUploader) Upload(ctx context.Context, path string) (*genai.File, fu
 	defer f.Close()
 
 	displayName := filepath.Base(path)
+
+	mimeType := mime.TypeByExtension(filepath.Ext(path))
+	if mimeType == "" {
+		switch filepath.Ext(path) {
+		case ".pdf":
+			mimeType = "application/pdf"
+		case ".jpg", ".jpeg":
+			mimeType = "image/jpeg"
+		case ".png":
+			mimeType = "image/png"
+		case ".txt":
+			mimeType = "text/plain"
+		}
+	}
+
 	uploadResult, err := u.client.Files.Upload(ctx, f, &genai.UploadFileConfig{
 		DisplayName: displayName,
+		MIMEType:    mimeType,
 	})
 	if err != nil {
 		return nil, nil, fmt.Errorf("failed to upload file: %w", err)
