@@ -314,6 +314,15 @@ func (g languageModel) prepareParams(call fantasy.Call) (*genai.GenerateContentC
 		config.ToolConfig = toolChoice
 		config.Tools = append(config.Tools, tools...)
 		warnings = append(warnings, toolWarnings...)
+
+		// Auto-enable IncludeServerSideToolInvocations when mixing built-in tools (FileSearch)
+		// with function calling tools, as required by Gemini API.
+		if hasMixedToolTypes(call.Tools) {
+			if config.ToolConfig == nil {
+				config.ToolConfig = &genai.ToolConfig{}
+			}
+			config.ToolConfig.IncludeServerSideToolInvocations = genai.Ptr(true)
+		}
 	}
 
 	return config, content, warnings, nil
@@ -1124,6 +1133,23 @@ func (g *languageModel) streamObjectWithJSONMode(ctx context.Context, call fanta
 			})
 		}
 	}, nil
+}
+
+// hasMixedToolTypes returns true if tools contain both built-in (FileSearch) and function calling tools.
+func hasMixedToolTypes(tools []fantasy.Tool) bool {
+	hasBuiltIn, hasFunction := false, false
+	for _, tool := range tools {
+		switch tool.GetType() {
+		case fantasy.ToolTypeFileSearch:
+			hasBuiltIn = true
+		case fantasy.ToolTypeFunction:
+			hasFunction = true
+		}
+		if hasBuiltIn && hasFunction {
+			return true
+		}
+	}
+	return false
 }
 
 func toGoogleTools(tools []fantasy.Tool, toolChoice *fantasy.ToolChoice) (googleTools []*genai.Tool, googleToolChoice *genai.ToolConfig, warnings []fantasy.CallWarning) {
